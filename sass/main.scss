@@ -1,0 +1,172 @@
+/* Font, colors, and variables modifications (accordion icon included) */
+
+$font-family-sans-serif: "Rubik", sans-serif;
+
+$primary: #5265e1;
+$secondary: #fa5959;
+$s-light: #6d6f78;
+$s-dark: #14213d;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "s-light": $s-light,
+  "s-dark": $s-dark,
+);
+
+$accordion-button-icon: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12"><path fill="none" stroke="#5267DF" stroke-width="3" d="M1 1l8 8 8-8"/></svg>');
+
+/* General CSS rules */
+
+body {
+  font-family: "Rubik", sans-serif;
+  overflow-x: hidden;
+}
+
+section {
+  margin-top: 100px;
+}
+
+header nav .nav-link,
+header nav .nav-btn {
+  text-align: center;
+}
+
+.navbar-nav .nav-item .nav-link {
+  font-size: 0.8rem;
+  letter-spacing: 0.2rem;
+}
+
+/* Social icon alterations to make them fit the rest of the navigation use of color */
+
+.social-icon:hover {
+  filter: invert(65%) sepia(45%) saturate(3400%) contrast(90%);
+}
+
+.background-shadow-right,
+.background-shadow-left {
+  position: relative;
+  z-index: 100;
+}
+  
+.background-shadow-right::before,
+.background-shadow-left::before {
+  content: "";
+  position: absolute;
+  background-color: #5368df;
+  width: 80%;
+  height: 75%;
+  bottom: 0;
+  z-index: -1;
+}
+  
+.background-shadow-right::before {
+  right: 0;
+  border-radius: 500px 0 0 500px;
+}
+
+.background-shadow-left::before {
+  left: 0;
+  border-radius: 0 500px 300px 0;
+}
+
+#download .card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 1rem 1rem 0px rgba(43, 73, 248, 0.15);
+}
+
+
+@media (max-width: 992px) {  
+  header nav.blured-background {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(6px);
+  }
+  
+  header nav .offcanvas-header {
+    width: 90%;
+    margin-bottom: 2em;
+  }
+  
+  header nav .offcanvas-header .social {
+    position: absolute;
+    left: 50%;
+    bottom: 3em;
+    transform: translateX(-50%);
+  }
+  
+  header nav .offcanvas-header .social .navbar-nav {
+    flex-direction: row;
+  }
+  
+  header nav .offcanvas {
+    background-color: rgba(35, 39, 60, 0.9);
+  }
+  
+  header nav .close-icon {
+    background-color: transparent;
+    border: none;
+    outline: none;
+  }
+  
+  header nav .nav-link,
+  header nav .nav-btn {
+    color: white;
+    font-size: 1rem;
+    font-weight: lighter;
+    letter-spacing: 0.2em;
+    padding-bottom: 1rem;
+  }
+  
+  header nav .nav-btn {
+    width: 50%;
+    background-color: transparent;
+    margin-top: 1.5em;
+    padding: 0.5em;
+    border: 1px solid white;
+  }
+
+  .nav-tabs .tab-link {
+    min-width: 100%;
+  }
+}
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+/* Additions to Bootstrap's styles */
+
+.nav-tabs .tab-link {
+  border: none;
+  color: $s-light;
+  margin-bottom: 0;
+  padding-bottom: 0.5em;
+}
+
+.nav-tabs .tab-link.active {
+  border-bottom: 3px solid $secondary !important;
+}
+
+/* Exercise 6: active states */
+
+.nav-link:hover, 
+.accordion-button:hover {
+  color: $secondary !important;
+}
+
+.btn-primary:hover {
+  color: $primary;
+  background-color: $body-bg;
+  border-color: $primary;
+}
+
+.btn-secondary:hover {
+  color: $secondary !important;
+  background-color: $body-bg;
+  border-color: $secondary;
+}
+
+.btn-light:hover {
+  color: $dark;
+  background-color: $body-bg;
+  border-color: $dark;
+}

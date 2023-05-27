@@ -1,4 +1,4 @@
-# Sprint 2 IT Academy | Web Design 2
+# Sprint 2 IT Academy | Landing page
 
 
 ## Getting started with Bootstrap and SASS
